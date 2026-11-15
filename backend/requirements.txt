@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]>=2.0
+psycopg[binary]
+pgvector
+pydantic-settings
+python-dotenv
+pytest
+pytest-asyncio
+httpx
+tree-sitter-language-pack
+sentence-transformers
+PyJWT>=2.10,<3

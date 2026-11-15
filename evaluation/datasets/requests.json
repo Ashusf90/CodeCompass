@@ -1,0 +1,402 @@
+[
+  {
+    "id": "requests-001",
+    "question": "Where is the main Request object model implemented?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-002",
+    "question": "How does the Request object prepare an HTTP request?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-003",
+    "question": "How does the Response object expose response content?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-004",
+    "question": "How is response JSON decoded?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-005",
+    "question": "How does the Response object determine its encoding?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-006",
+    "question": "How are HTTP response headers represented?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-007",
+    "question": "How does Requests handle response status codes?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-008",
+    "question": "How is response text decoded from bytes?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-009",
+    "question": "How does the PreparedRequest class prepare request data?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-010",
+    "question": "How are request bodies encoded before sending?",
+    "expected_file": "src/requests/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-011",
+    "question": "Where is the Session class implemented?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-012",
+    "question": "How does a Session send an HTTP request?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-013",
+    "question": "How does Session maintain cookies across requests?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-014",
+    "question": "How are default headers managed by a Session?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-015",
+    "question": "How does Session prepare a request before sending?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-016",
+    "question": "How does Requests configure session-level authentication?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-017",
+    "question": "How does Session handle redirects?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-018",
+    "question": "How are HTTP adapters mounted on a Session?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-019",
+    "question": "How does Session merge request settings?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-020",
+    "question": "How does Session close its underlying adapters?",
+    "expected_file": "src/requests/sessions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-021",
+    "question": "Where is the HTTPAdapter class implemented?",
+    "expected_file": "src/requests/adapters.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-022",
+    "question": "How does HTTPAdapter send prepared requests?",
+    "expected_file": "src/requests/adapters.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-023",
+    "question": "How does Requests configure connection pooling?",
+    "expected_file": "src/requests/adapters.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-024",
+    "question": "How are connection errors handled by HTTPAdapter?",
+    "expected_file": "src/requests/adapters.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-025",
+    "question": "How does HTTPAdapter configure retry behavior?",
+    "expected_file": "src/requests/adapters.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-026",
+    "question": "How does the adapter handle proxy configuration?",
+    "expected_file": "src/requests/adapters.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-027",
+    "question": "Where are the top-level get and post functions implemented?",
+    "expected_file": "src/requests/api.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-028",
+    "question": "How does requests.get create and send a request?",
+    "expected_file": "src/requests/api.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-029",
+    "question": "How does the requests.request function work?",
+    "expected_file": "src/requests/api.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-030",
+    "question": "How does Requests implement the post convenience function?",
+    "expected_file": "src/requests/api.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-031",
+    "question": "How are top-level HTTP methods exposed?",
+    "expected_file": "src/requests/api.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-032",
+    "question": "How does the top-level API manage a temporary Session?",
+    "expected_file": "src/requests/api.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-033",
+    "question": "How does Requests implement cookie storage?",
+    "expected_file": "src/requests/cookies.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-034",
+    "question": "Where is the RequestsCookieJar class defined?",
+    "expected_file": "src/requests/cookies.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-035",
+    "question": "How are cookies extracted from HTTP responses?",
+    "expected_file": "src/requests/cookies.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-036",
+    "question": "How are cookies added to outgoing requests?",
+    "expected_file": "src/requests/cookies.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-037",
+    "question": "How does Requests support cookie domain matching?",
+    "expected_file": "src/requests/cookies.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-038",
+    "question": "How are cookie conflicts handled?",
+    "expected_file": "src/requests/cookies.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-039",
+    "question": "How does Requests implement basic authentication?",
+    "expected_file": "src/requests/auth.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-040",
+    "question": "Where is HTTPBasicAuth defined?",
+    "expected_file": "src/requests/auth.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-041",
+    "question": "How does Requests support digest authentication?",
+    "expected_file": "src/requests/auth.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-042",
+    "question": "How are authentication credentials applied to a request?",
+    "expected_file": "src/requests/auth.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-043",
+    "question": "Where are Requests exception classes defined?",
+    "expected_file": "src/requests/exceptions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-044",
+    "question": "How does Requests represent connection errors?",
+    "expected_file": "src/requests/exceptions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-045",
+    "question": "What exception is used for HTTP timeouts?",
+    "expected_file": "src/requests/exceptions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-046",
+    "question": "How are invalid URL errors represented?",
+    "expected_file": "src/requests/exceptions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-047",
+    "question": "How does Requests implement its case-insensitive dictionary?",
+    "expected_file": "src/requests/structures.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-048",
+    "question": "Where is CaseInsensitiveDict defined?",
+    "expected_file": "src/requests/structures.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-049",
+    "question": "How does Requests normalize URLs and prepare URL components?",
+    "expected_file": "src/requests/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "requests-050",
+    "question": "How are HTTP status code constants mapped to numeric values?",
+    "expected_file": "src/requests/status_codes.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  }
+]

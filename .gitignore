@@ -1,0 +1,28 @@
+.env
+.env.*
+!*.env.example
+**/.env
+**/.env.*
+!**/.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+.venv/
+backend/data/
+evaluation/results/*
+!evaluation/results/.gitkeep
+node_modules/
+.next/
+dist/
+build/
+.DS_Store
+*.log
+
+# Local database backups
+*.dump
+*.sql
+*.backup
+
+# Local environment and generated data
+codecompass-before-docker.dump

@@ -1,0 +1,8 @@
+[
+  {
+    "id": "hello-001",
+    "question": "What does this repository contain?",
+    "expected_file": "README",
+    "answer_correct": null
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "fastapi-001",
+    "question": "How does FastAPI initialize an application instance?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-002",
+    "question": "Where is the FastAPI application class defined?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-003",
+    "question": "How does FastAPI configure its default response class?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-004",
+    "question": "How are routes included in a FastAPI application?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-005",
+    "question": "How does FastAPI register exception handlers?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-006",
+    "question": "How is middleware added to a FastAPI application?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-007",
+    "question": "How does FastAPI configure its OpenAPI URL?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-008",
+    "question": "How does the application expose its router?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-009",
+    "question": "How are application-level dependencies configured?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-010",
+    "question": "How does FastAPI configure lifespan events?",
+    "expected_file": "fastapi/applications.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-011",
+    "question": "How does APIRoute handle incoming requests?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-012",
+    "question": "Where is the APIRoute class implemented?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-013",
+    "question": "How does FastAPI create request handlers for routes?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-014",
+    "question": "How are response models processed during routing?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-015",
+    "question": "How does the router handle dependency injection?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-016",
+    "question": "How does FastAPI generate route responses?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-017",
+    "question": "How are endpoint functions executed by the router?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-018",
+    "question": "How does FastAPI handle HTTP methods on routes?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-019",
+    "question": "How does the router handle response serialization?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-020",
+    "question": "How are route-specific dependencies resolved?",
+    "expected_file": "fastapi/routing.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-021",
+    "question": "How does FastAPI solve dependencies for a request?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-022",
+    "question": "Where is the solve_dependencies function implemented?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-023",
+    "question": "How does FastAPI create dependency subgraphs?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-024",
+    "question": "How are dependency parameters analyzed?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-025",
+    "question": "How does FastAPI handle dependency caching?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-026",
+    "question": "How are sub-dependencies resolved?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-027",
+    "question": "How does FastAPI extract values from request parameters?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-028",
+    "question": "How are dependency validation errors collected?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-029",
+    "question": "How does FastAPI handle generator-based dependencies?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-030",
+    "question": "How are request body fields processed during dependency resolution?",
+    "expected_file": "fastapi/dependencies/utils.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-031",
+    "question": "Where are FastAPI parameter helper functions defined?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-032",
+    "question": "How does the Query helper configure query parameters?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-033",
+    "question": "How does the Path helper define path parameters?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-034",
+    "question": "How does the Header helper configure header parameters?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-035",
+    "question": "How does the Cookie helper define cookie parameters?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-036",
+    "question": "How does the Body helper configure request body parameters?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-037",
+    "question": "How does the Form helper define form parameters?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-038",
+    "question": "How does the File helper configure uploaded files?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-039",
+    "question": "How does the Depends helper declare dependencies?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-040",
+    "question": "How does the Security helper declare security dependencies?",
+    "expected_file": "fastapi/param_functions.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-041",
+    "question": "Where are FastAPI OpenAPI data models defined?",
+    "expected_file": "fastapi/openapi/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-042",
+    "question": "How is an OpenAPI operation represented?",
+    "expected_file": "fastapi/openapi/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-043",
+    "question": "How are OpenAPI schema objects modeled?",
+    "expected_file": "fastapi/openapi/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-044",
+    "question": "How are OpenAPI parameter models represented?",
+    "expected_file": "fastapi/openapi/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-045",
+    "question": "How are OpenAPI response definitions modeled?",
+    "expected_file": "fastapi/openapi/models.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-046",
+    "question": "How does FastAPI handle Pydantic version compatibility?",
+    "expected_file": "fastapi/_compat/v2.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-047",
+    "question": "How are Pydantic model fields inspected?",
+    "expected_file": "fastapi/_compat/v2.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-048",
+    "question": "How does FastAPI generate schemas using Pydantic v2?",
+    "expected_file": "fastapi/_compat/v2.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-049",
+    "question": "How are validation errors handled for Pydantic v2?",
+    "expected_file": "fastapi/_compat/v2.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  },
+  {
+    "id": "fastapi-050",
+    "question": "How does FastAPI support Pydantic v2 model serialization?",
+    "expected_file": "fastapi/_compat/v2.py",
+    "language": "python",
+    "file_type": "source",
+    "answer_correct": null
+  }
+]
