@@ -4,6 +4,7 @@ from sqlalchemy import text
 
 from app.db.database import engine
 from app.db.models import Base
+from app.db.usage import UserDailyUsage, UserMinuteRateLimit
 
 
 async def init_db():
