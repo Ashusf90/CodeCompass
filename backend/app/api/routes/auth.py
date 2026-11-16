@@ -43,8 +43,10 @@ async def github_login():
     params = {
         "client_id": settings.github_client_id,
         "redirect_uri": (
-            f"{settings.backend_url.rstrip('/')}"
-            "/api/auth/github/callback"
+            (
+                settings.github_redirect_uri.strip()
+                or f"{settings.backend_url.rstrip('/')}/api/auth/github/callback"
+            )
         ),
         "scope": "read:user user:email",
         "state": state,
@@ -80,8 +82,10 @@ async def github_callback(
         raise HTTPException(503, "GitHub OAuth is not configured")
 
     callback_url = (
-        f"{settings.backend_url.rstrip('/')}"
-        "/api/auth/github/callback"
+        (
+            settings.github_redirect_uri.strip()
+            or f"{settings.backend_url.rstrip('/')}/api/auth/github/callback"
+        )
     )
 
     try:

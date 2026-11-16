@@ -211,6 +211,101 @@ def extract_chunks(path: Path, content: str) -> list[dict]:
 
 
 _embedding_model = None
+CLOUDFLARE_BATCH_SIZE = 16
+CLOUDFLARE_MAX_INPUT_CHARS = 700
+
+
+def _normalize_vector(vector: list[float]) -> list[float]:
+    import math
+
+    norm = math.sqrt(sum(value * value for value in vector))
+    if not norm:
+        raise RuntimeError("Embedding provider returned a zero vector")
+
+    return [value / norm for value in vector]
+
+
+def _generate_cloudflare_embeddings(
+    texts: list[str],
+) -> list[list[float]]:
+    import httpx
+
+    if not settings.cloudflare_account_id or not settings.cloudflare_api_token:
+        raise RuntimeError(
+            "Cloudflare embeddings require CLOUDFLARE_ACCOUNT_ID "
+            "and CLOUDFLARE_API_TOKEN"
+        )
+
+    endpoint = (
+        "https://api.cloudflare.com/client/v4/accounts/"
+        f"{settings.cloudflare_account_id}/ai/run/"
+        f"{settings.cloudflare_embedding_model}"
+    )
+    headers = {
+        "Authorization": f"Bearer {settings.cloudflare_api_token}",
+        "Content-Type": "application/json",
+    }
+
+    vectors = []
+
+    with httpx.Client(timeout=90.0) as client:
+        for start in range(0, len(texts), CLOUDFLARE_BATCH_SIZE):
+            batch = [
+                text[:CLOUDFLARE_MAX_INPUT_CHARS]
+                for text in texts[start:start + CLOUDFLARE_BATCH_SIZE]
+            ]
+
+            try:
+                response = client.post(
+                    endpoint,
+                    headers=headers,
+                    json={"text": batch},
+                )
+            except httpx.RequestError as exc:
+                raise RuntimeError(
+                    "Could not connect to Cloudflare Workers AI"
+                ) from exc
+
+            if response.status_code == 429:
+                raise RuntimeError(
+                    "Cloudflare Workers AI rate limit or daily free quota "
+                    "reached. Wait for capacity or the daily reset. "
+                    "No paid fallback is configured."
+                )
+
+            if response.status_code >= 400:
+                raise RuntimeError(
+                    "Cloudflare Workers AI request failed "
+                    f"with HTTP {response.status_code}"
+                )
+
+            try:
+                payload = response.json()
+                if not payload.get("success", False):
+                    raise ValueError("Cloudflare reported an unsuccessful request")
+
+                batch_vectors = payload["result"]["data"]
+            except (ValueError, KeyError, TypeError) as exc:
+                raise RuntimeError(
+                    "Cloudflare returned an invalid embedding response"
+                ) from exc
+
+            if len(batch_vectors) != len(batch):
+                raise RuntimeError(
+                    "Cloudflare returned an unexpected number of embeddings"
+                )
+
+            for vector in batch_vectors:
+                if len(vector) != settings.embedding_dimension:
+                    raise RuntimeError(
+                        "Cloudflare embedding dimension does not match "
+                        f"the configured {settings.embedding_dimension}"
+                    )
+                vectors.append(
+                    _normalize_vector([float(value) for value in vector])
+                )
+
+    return vectors
 
 
 def generate_embeddings(texts: list[str]) -> list[list[float]]:
@@ -218,6 +313,16 @@ def generate_embeddings(texts: list[str]) -> list[list[float]]:
 
     if not texts:
         return []
+
+    provider = settings.embedding_provider.strip().lower()
+
+    if provider == "cloudflare":
+        return _generate_cloudflare_embeddings(texts)
+
+    if provider != "local":
+        raise RuntimeError(
+            f"Unsupported embedding provider: {settings.embedding_provider}"
+        )
 
     from sentence_transformers import SentenceTransformer
 

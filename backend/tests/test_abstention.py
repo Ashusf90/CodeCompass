@@ -31,3 +31,26 @@ def test_relevant_result_after_weak_top_result_should_not_abstain():
 def test_weak_lexical_match_should_abstain():
     hits = [{"similarity": 0.19, "lexical_score": 0.24}]
     assert not has_relevant_hit(hits)
+
+
+def test_observed_relevant_webcam_result_should_pass():
+    hits = [{"similarity": 0.5823, "lexical_score": 0.1}]
+    assert has_relevant_hit(hits)
+
+
+def test_observed_unsupported_payment_results_should_abstain():
+    hits = [
+        {"similarity": 0.5282, "lexical_score": 0.3},
+        {"similarity": 0.5438, "lexical_score": 0.1},
+        {"similarity": 0.4628, "lexical_score": 0.5},
+    ]
+    assert not has_relevant_hit(hits)
+
+
+def test_observed_unsupported_oauth_results_should_abstain():
+    hits = [
+        {"similarity": 0.4733, "lexical_score": 0.1},
+        {"similarity": 0.4332, "lexical_score": 0.1},
+        {"similarity": 0.5183, "lexical_score": 0.0},
+    ]
+    assert not has_relevant_hit(hits)

@@ -3,24 +3,21 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app
-ENV HF_HOME=/app/.cache/huggingface
 
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
-    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+COPY requirements-production.txt .
 
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir --extra-index-url https://download.pytorch.org/whl/cpu torch==2.11.0+cpu \
-    && pip install --no-cache-dir -r requirements.txt
+    && pip install --no-cache-dir -r requirements-production.txt
 
 COPY app ./app
 
-RUN mkdir -p /app/data/repos /app/.cache/huggingface
+RUN mkdir -p /app/data/repos
 
 EXPOSE 8000
 
