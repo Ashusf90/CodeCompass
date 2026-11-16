@@ -1,15 +1,43 @@
+import re
+
 import httpx
 
 from app.core.config import settings
 
 
+ARCHITECTURE_TERMS = (
+    "components modules architecture system design "
+    "workflow data flow application pipeline "
+    "technology stack dependencies frontend backend"
+)
+
+
+def _is_architecture_question(query: str) -> bool:
+    return bool(
+        re.search(
+            r"\b(architecture|architectural|system design|"
+            r"overall design|high.level design|data flow)\b",
+            query,
+            re.IGNORECASE,
+        )
+    )
+
+
+def _build_search_query(original: str, rewritten: str) -> str:
+    if not _is_architecture_question(original):
+        return rewritten
+
+    return f"{original} {rewritten} {ARCHITECTURE_TERMS}"
+
+
 async def rewrite_search_query(query: str) -> str:
     """
-    Expand a repository question into a search-friendly query.
-    If Groq is unavailable, preserve the user's original query.
+    Rewrite repository questions into search-friendly queries.
+    Preserve and expand broad architecture questions.
+    Fall back safely when Groq is unavailable.
     """
     if not settings.groq_api_key:
-        return query
+        return _build_search_query(query, query)
 
     request_body = {
         "model": "openai/gpt-oss-120b",
@@ -18,7 +46,9 @@ async def rewrite_search_query(query: str) -> str:
                 "role": "system",
                 "content": (
                     "Rewrite the user's question as a concise code-search query. "
-                    "Keep important technical terms, identifiers, and filenames. "
+                    "Preserve important technical terms, identifiers, and filenames. "
+                    "For architecture questions, include relevant components, "
+                    "modules, technologies, workflow, and data flow. "
                     "Return only the rewritten query, with no explanation."
                 ),
             },
@@ -41,8 +71,8 @@ async def rewrite_search_query(query: str) -> str:
             rewritten = response.json()["choices"][0]["message"]["content"].strip()
 
             if rewritten and len(rewritten) <= 2000:
-                return rewritten
+                return _build_search_query(query, rewritten)
     except (httpx.HTTPError, KeyError, IndexError, TypeError, ValueError):
         pass
 
-    return query
+    return _build_search_query(query, query)
