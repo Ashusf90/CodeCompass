@@ -60,3 +60,19 @@ def test_reranker_sorts_by_cross_encoder_score(monkeypatch):
     assert results[1]["rerank_score"] == 0.1
     assert fake.pairs[1][1] == "second.py\nrelevant"
     assert results[0]["similarity"] == 0.5
+
+
+def test_reranker_falls_back_when_optional_dependency_missing(monkeypatch):
+    import sys
+    from app.services import retrieval
+
+    monkeypatch.setattr(retrieval, "_reranker", None)
+    monkeypatch.setitem(sys.modules, "sentence_transformers", None)
+
+    hits = [
+        {"file_path": "main.py", "content": "example", "similarity": 0.8}
+    ]
+
+    results = retrieval._rerank_hits("test query", hits)
+
+    assert results == hits

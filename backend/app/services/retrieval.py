@@ -38,8 +38,11 @@ def _rerank_hits(query: str, hits: list[dict]) -> list[dict]:
     global _reranker
 
     if _reranker is None:
-        from sentence_transformers import CrossEncoder
-        _reranker = CrossEncoder(settings.reranker_model)
+        try:
+            from sentence_transformers import CrossEncoder
+            _reranker = CrossEncoder(settings.reranker_model)
+        except ImportError:
+            return hits
 
     pairs = [
         (query, f"{hit['file_path']}\n{hit['content']}")
